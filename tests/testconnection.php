@@ -18,3 +18,7 @@ foreach ($alumnos->all() as $alumno)
 {
 	var_dump($alumno);
 }
+
+$alumno = $alumnos->find("000001");
+
+var_dump($alumno);

@@ -35,7 +35,8 @@ class AlumnoRepository
 		$ps->bindParam(1, $id, PDO::PARAM_STR);
 		if ($ps->execute())
 		{
-			return $ps->fetch(PDO::FETCH_CLASS, Alumno::class);
+			$ps->setFetchMode(PDO::FETCH_CLASS,Alumno::class);
+			return $ps->fetch();
 		}
 
 		throw new Exception("No se encontro un alumno con este código");
